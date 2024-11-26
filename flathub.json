@@ -1,0 +1,52 @@
+{
+    "app-id" : "io.astian.midori",
+    "runtime" : "org.freedesktop.Platform",
+    "runtime-version" : "24.08",
+    "sdk" : "org.freedesktop.Sdk",
+    "command" : "midori-bin",
+    "finish-args" : [
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--share=network",
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--socket=pulseaudio",
+        "--device=dri",
+        "--device=all",
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.freedesktop.Notifications",
+        "--filesystem=home"
+    ],
+    "modules" : [
+        {
+            "name" : "midori",
+            "buildsystem" : "simple",
+            "build-commands": [
+                "mkdir /app/bin && cp -rf * /app/bin",
+                "install -Dm644 io.astian.midori.desktop /app/share/applications/io.astian.midori.desktop",
+                "install -Dm644 io.astian.midori.appdata.xml /app/share/appdata/io.astian.midori.appdata.xml",
+                "install -Dm644 /app/bin/browser/chrome/icons/default/default48.png /app/share/icons/hicolor/48x48/apps/io.astian.midori.png",
+                "install -Dm644 /app/bin/browser/chrome/icons/default/default64.png /app/share/icons/hicolor/64x64/apps/io.astian.midori.png",
+                "install -Dm644 /app/bin/browser/chrome/icons/default/default128.png /app/share/icons/hicolor/128x128/apps/io.astian.midori.png"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://github.com/goastian/midori-desktop/releases/download/v11.4.3/midori-11.4.3.linux-x86_64.tar.bz2",
+                    "sha256": "98e571e9e593a156d444a1bfdf426c3c2160b7de45d817feee036f90acd3da46"
+                },
+                {
+                    "type" : "file",
+                    "path" : "io.astian.midori.appdata.xml"
+                },
+                {
+                    "type" : "file",
+                    "path" : "io.astian.midori.desktop"
+                }
+            ]
+        }
+    ]
+}
