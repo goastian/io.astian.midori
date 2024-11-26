@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2024 josejp2424 <puppylinuxjosejp2424@gmail.com> -->
+<!-- Copyright 2024 ponchale <alfonso.hernanddez@astian.org> -->
+<application>
+  <id type="desktop">io.astian.midori.desktop</id>
+  <name>midori</name>
+  <summary>Midori Web Browser</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MPL-2.0</project_license>
+  <description>
+    <p>
+      Bringing together all kinds of awesomeness to make browsing better for you. Get to your favorite sites quickly – even if you don’t remember the URLs. Type your term into the location bar (aka the Awesome Bar) and the autocomplete function will include possible matches from your browsing history, bookmarked sites and open tabs.
+    </p>
+  </description>
+  <keywords>
+    <keyword>midori</keyword>
+    <keyword>internet</keyword>
+    <keyword>web</keyword>
+  </keywords>
+  <url type="homepage">https://astian.org</url>
+<screenshots>
+  <screenshot type="default">https://github.com/goastian/io.astian.midori/blob/main/screenshot1.png</screenshot>
+  <screenshot>https://github.com/goastian/io.astian.midori/blob/main/screenshot2.png</screenshot>
+  <screenshot>https://github.com/goastian/io.astian.midori/blob/main/screenshot3.png</screenshot>
+</screenshots>
+</application>
