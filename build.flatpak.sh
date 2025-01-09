@@ -5,7 +5,7 @@
 USER_HOME=$(eval echo ~$SUDO_USER) # Get the home directory of the user running the script
 # Path configuration
 REPO_PATH="$USER_HOME/.local/share/flatpak/repo"        # Repository path for the current user
-CONFIG_PATH="$USER_HOME/midori-flatpak/io.astian.midori.json" # Path to the JSON configuration file
+CONFIG_PATH="$USER_HOME/midori-flatpak/flathub.json" # Path to the JSON configuration file
 OUTPUT_PATH="$USER_HOME/midori-flatpak/io.astian.midori.flatpak" # Output path for the .flatpak file
 BUILD_DIR="$USER_HOME/midori-flatpak/build"            # Temporary build directory
 # Function to install appstream and additional dependencies depending on the distro
@@ -48,12 +48,10 @@ if ! command -v appstream &>/dev/null; then
 else
     echo "appstream is already installed."
 fi
-# Verify the existence of files and directories
 if [ ! -f "$CONFIG_PATH" ]; then
     echo "Error: The configuration file does not exist at $CONFIG_PATH"
     exit 1
 fi
-# Create the build directory if it does not exist
 if [ ! -d "$BUILD_DIR" ]; then
     mkdir -p "$BUILD_DIR"
 fi
@@ -84,7 +82,6 @@ fi
 # Install and test the application locally
 echo "Installing and testing the application..."
 flatpak install --user -y "$REPO_PATH" io.astian.midori
-# Test the installation
 if [ $? -eq 0 ]; then
     echo "Application installed successfully. Running it now..."
     flatpak run io.astian.midori
