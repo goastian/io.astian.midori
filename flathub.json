@@ -35,8 +35,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://github.com/goastian/midori-desktop/releases/download/v11.4.3/midori-11.4.3.linux-x86_64.tar.bz2",
-                    "sha256": "98e571e9e593a156d444a1bfdf426c3c2160b7de45d817feee036f90acd3da46"
+                    "url" : "https://github.com/goastian/midori-desktop/releases/download/v11.5/midori-11.5.linux-x86_64.tar.bz2",
+                    "sha256": "ae4b29d2018598cf105c356ba2eca7d87140f96badc5d2898fa1d13e06b5cc4e"
                 },
                 {
                     "type" : "file",
